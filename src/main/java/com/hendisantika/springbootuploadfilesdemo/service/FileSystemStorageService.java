@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.stream.Stream;
 
 /**
  * Created by IntelliJ IDEA.
@@ -65,5 +66,22 @@ public class FileSystemStorageService implements StorageService {
         }
 
         return filename;
+    }
+
+    @Override
+    public Stream<Path> loadAll() {
+        try {
+            return Files.walk(this.rootLocation, 1)
+                    .filter(path -> !path.equals(this.rootLocation))
+                    .map(this.rootLocation::relativize);
+        } catch (IOException e) {
+            throw new StorageException("Failed to read stored files", e);
+        }
+
+    }
+
+    @Override
+    public Path load(String filename) {
+        return rootLocation.resolve(filename);
     }
 }
