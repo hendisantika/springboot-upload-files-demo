@@ -1,0 +1,74 @@
+{
+  "info": {
+    "_postman_id": "cdd89d1f-dd49-4f0c-96c1-05ac2c52f6d3",
+    "name": "Spring Boot Upload Files",
+    "description": "Spring Boot Upload Files",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Single File",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "value": null,
+              "type": "file"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/upload-file",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "upload-file"
+          ]
+        },
+        "description": "Upload Single File"
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Multiple Files",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "files",
+              "type": "file",
+              "src": [
+                "/Users/hendisantika/Pictures/android.jpg",
+                "/Users/hendisantika/Pictures/Angular.png",
+                "/Users/hendisantika/Pictures/babe.png"
+              ]
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/upload-multiple-files",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "upload-multiple-files"
+          ]
+        },
+        "description": "Upload Multiple Files\n"
+      },
+      "response": []
+    }
+  ]
+}
