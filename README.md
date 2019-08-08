@@ -15,3 +15,10 @@ $ ./gradlew clean bootRun
 ```
 Once the application is started, you can access it at http://localhost:8080.
 
+1. Upload Single File
+
+
+2. Upload Multiple Files
+
+
+3. Download File
